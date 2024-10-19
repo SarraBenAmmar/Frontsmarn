@@ -24,14 +24,15 @@ class SelectionPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(221, 8, 5, 17), // Darker text color for contrast
+                color: Color.fromARGB(
+                    221, 8, 5, 17), // Darker text color for contrast
               ),
             ),
             const SizedBox(height: 70),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(width: 12), 
+                const SizedBox(width: 12),
                 // Pupil Button
                 _buildButton(
                   context,
@@ -40,7 +41,8 @@ class SelectionPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const StudentForm()),
+                      MaterialPageRoute(
+                          builder: (context) => const StudentForm()),
                     );
                   },
                 ),
@@ -48,12 +50,13 @@ class SelectionPage extends StatelessWidget {
                 // Admin Button
                 _buildButton(
                   context,
-                  icon: Icons.admin_panel_settings,
+                  icon: Icons.people,
                   label: 'Educator',
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const AdminForm()),
+                      MaterialPageRoute(
+                          builder: (context) => const AdminForm()),
                     );
                   },
                 ),
@@ -67,7 +70,7 @@ class SelectionPage extends StatelessWidget {
               style: TextButton.styleFrom(
                 foregroundColor: Colors.blue, // Text color
               ),
-              child:  const Text('Refer to the home page'),
+              child: const Text('Refer to the home page'),
             ),
           ],
         ),
@@ -75,13 +78,18 @@ class SelectionPage extends StatelessWidget {
     );
   }
 
-  Widget _buildButton(BuildContext context, {required IconData icon, required String label, required VoidCallback onTap}) {
+  Widget _buildButton(BuildContext context,
+      {required IconData icon,
+      required String label,
+      required VoidCallback onTap}) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          border: Border.all(color: Colors.blue.withOpacity(0.5), width: 2), // Light transparent border
+          border: Border.all(
+              color: Colors.blue.withOpacity(0.5),
+              width: 2), // Light transparent border
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
@@ -95,13 +103,13 @@ class SelectionPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            Icon(icon, size: 60, color: Colors.blue), // Icon with blue color
+            Icon(icon, size: 60, color: Colors.blue),
             const SizedBox(height: 10),
             Text(
               label,
               style: const TextStyle(
                 fontSize: 18,
-                color: Colors.black54, 
+                color: Colors.black54,
               ),
             ),
           ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smarn/SelectionPage.dart';
+import 'package:smarn/Home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,46 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SelectionPage(),
+      home: const HomePage(),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
