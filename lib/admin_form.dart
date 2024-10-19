@@ -8,7 +8,7 @@ class AdminForm extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF2F2F2), // Light grey background
       appBar: AppBar(
-        title: const Text('Admin Form'),
+        title: const Text('Educator Form'),
         backgroundColor: const Color(0xFFC0EEF2),
       ),
       body: Center(
@@ -32,15 +32,16 @@ class AdminForm extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Text(
-                  'Admin Login',
+                  'Login',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(221, 8, 5, 17), // Darker text color for contrast
+                    color: Color.fromARGB(
+                        221, 8, 5, 17), // Darker text color for contrast
                   ),
                 ),
                 const SizedBox(height: 20),
-               const  TextField(
+                const TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Username',

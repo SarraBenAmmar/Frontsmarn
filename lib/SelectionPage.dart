@@ -31,25 +31,12 @@ class SelectionPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Teacher Button
-                _buildButton(
-                  context,
-                  icon: Icons.group,
-                  label: 'Teacher',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const TeacherForm()),
-                    );
-                  },
-
-                ),
-                const SizedBox(width: 30), 
+                const SizedBox(width: 12), 
                 // Pupil Button
                 _buildButton(
                   context,
                   icon: Icons.school,
-                  label: 'Student',
+                  label: '  Student ',
                   onTap: () {
                     Navigator.push(
                       context,
@@ -57,12 +44,12 @@ class SelectionPage extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(width: 30), // Space between buttons
+                const SizedBox(width: 40), // Space between buttons
                 // Admin Button
                 _buildButton(
                   context,
                   icon: Icons.admin_panel_settings,
-                  label: 'Admin',
+                  label: 'Educator',
                   onTap: () {
                     Navigator.push(
                       context,
