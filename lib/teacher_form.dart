@@ -6,11 +6,13 @@ class TeacherForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF2F2F2),
       appBar: AppBar(
-        title: const Text('Guardian Form'),
+        backgroundColor: const Color(0xFFC0EEF2),
+        title: const Text('Teacher Form'),
       ),
       body: const Center(
-        child: Text('This is the guardian form page'),
+        child: Text('This is the Teacher form page'),
       ),
     );
   }

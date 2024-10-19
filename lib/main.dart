@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smarn/user_type.dart';
+import 'package:smarn/SelectionPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Taki Academy',
+      debugShowCheckedModeBanner: false,
+      title: 'SMARN',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
