@@ -11,7 +11,7 @@ class SelectionPage extends StatelessWidget {
       backgroundColor: const Color(0xFFF2F2F2), // Light grey background
       appBar: AppBar(
         title: const Text('Smarn'),
-        backgroundColor: const Color(0xFFC0EEF2),
+        backgroundColor: Colors.blue, // Blue AppBar
       ),
       body: Center(
         child: Column(
@@ -32,7 +32,7 @@ class SelectionPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(width: 12),
-                // Pupil Button
+                // Student Button
                 _buildButton(
                   context,
                   icon: Icons.school,
@@ -54,7 +54,8 @@ class SelectionPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AdminForm()),
+                      MaterialPageRoute(
+                          builder: (context) => const AdminForm()),
                     );
                   },
                 ),
@@ -84,10 +85,10 @@ class SelectionPage extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.white, // Button background
           border: Border.all(
-              color: Colors.blue.withOpacity(0.5),
-              width: 2), // Light transparent border
+              color: Colors.blue.withOpacity(0.5), // Light transparent border
+              width: 2),
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
@@ -101,13 +102,13 @@ class SelectionPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            Icon(icon, size: 60, color: Colors.blue),
+            Icon(icon, size: 60, color: Colors.blue), // Blue icon
             const SizedBox(height: 10),
             Text(
               label,
               style: const TextStyle(
                 fontSize: 18,
-                color: Colors.black54,
+                color: Color(0xFF023E8A), // Darker text for contrast
               ),
             ),
           ],

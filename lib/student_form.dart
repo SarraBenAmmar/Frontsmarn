@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class StudentForm extends StatefulWidget {
   const StudentForm({super.key});
 
@@ -9,82 +10,82 @@ class StudentForm extends StatefulWidget {
 class _StudentFormState extends State<StudentForm> {
   final _formKey = GlobalKey<FormState>();
 
-  // Controllers to retrieve the text from the fields
   final TextEditingController _classController = TextEditingController();
   final TextEditingController _keyController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF2F2F2),
+      backgroundColor: const Color(0xFFF2F2F2), // Light grey background
       appBar: AppBar(
-        backgroundColor: const Color(0xFFC0EEF2),
+        backgroundColor: Colors.blue, // Changed AppBar color to blue
         title: const Text('Student Form'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
-          key: _formKey, // Form key to handle validation
-          child: ListView(
-            children: [
-              const Text(
-                'Student Information',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 20),
+          key: _formKey,
+          child: ListView(children: [
+            const Text(
+              'Student Information',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
 
-              // Class Field
-              TextFormField(
-                controller: _classController,
-                decoration: const InputDecoration(
-                  labelText: 'Class',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter the class';
-                  }
-                  return null;
-                },
+            // Class Field
+            TextFormField(
+              controller: _classController,
+              decoration: const InputDecoration(
+                labelText: 'Class',
+                border: OutlineInputBorder(),
               ),
-              const SizedBox(height: 20),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter the class';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 20),
 
-              // Key Field
-              TextFormField(
-                controller: _keyController,
-                decoration: const InputDecoration(
-                  labelText: 'Key to Connect',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter the key to connect';
-                  }
-                  return null;
-                },
+            // Key Field
+            TextFormField(
+              controller: _keyController,
+              decoration: const InputDecoration(
+                labelText: 'Key to Connect',
+                border: OutlineInputBorder(),
               ),
-              const SizedBox(height: 30),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter the key to connect';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 30),
 
-              // Submit Button
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    // If the form is valid, display a snackbar or perform an action
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Form Submitted')),
-                    );
-                    // Perform your submission action here
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 109, 168, 250),
-                ),
-                child: const Text('Submit'),
+            // Submit Button
+            ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Form Submitted')),
+                  );
+                }
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue, // Changed button color to blue
               ),
-              const SizedBox(height :30),
-            ]
-          ),
+              child: const Text(
+                'Submit',
+                style: TextStyle(
+                  color: Colors.white, // Text color to white
+                ),
+              ),
+            ),
+            const SizedBox(height: 30),
+          ]),
         ),
       ),
     );

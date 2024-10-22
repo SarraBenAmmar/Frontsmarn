@@ -13,10 +13,10 @@ class AdminDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5), // Light neutral background
+      backgroundColor: const Color(0xFFF2F2F2), // Light grey background
       appBar: AppBar(
         title: const Text('Admin Dashboard'),
-        backgroundColor: const Color(0xFF3A86FF), // Deep modern blue
+        backgroundColor: Colors.blue, // Main blue color for AppBar
         elevation: 4, // Slight elevation for shadow effect
       ),
       body: Row(
@@ -117,15 +117,14 @@ class AdminDashboard extends StatelessWidget {
           ],
         ),
         child: InkWell(
-          splashColor:
-              const Color(0xFF3A86FF).withOpacity(0.3), // Splash effect
+          splashColor: Colors.blue.withOpacity(0.3), // Splash effect
           borderRadius: BorderRadius.circular(20),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(icon, size: 50, color: const Color(0xFF3A86FF)),
+                Icon(icon, size: 50, color: Colors.blue),
                 const SizedBox(height: 20),
                 Text(
                   title,

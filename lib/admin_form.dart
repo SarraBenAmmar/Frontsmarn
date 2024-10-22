@@ -32,10 +32,10 @@ class _AdminFormState extends State<AdminForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF2F2F2),
+      backgroundColor: const Color(0xFFF2F2F2), // Light grey background
       appBar: AppBar(
         title: const Text('Admin Form'),
-        backgroundColor: const Color(0xFFC0EEF2),
+        backgroundColor: Colors.blue, // AppBar color blue
       ),
       body: Center(
         child: Padding(
@@ -46,7 +46,7 @@ class _AdminFormState extends State<AdminForm> {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
+                  color: Colors.blue.withOpacity(0.5),
                   spreadRadius: 3,
                   blurRadius: 5,
                   offset: const Offset(0, 3),
@@ -64,6 +64,7 @@ class _AdminFormState extends State<AdminForm> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
+                      color: Colors.blue, // Text color blue
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -114,7 +115,15 @@ class _AdminFormState extends State<AdminForm> {
                         }
                       }
                     },
-                    child: const Text('Login'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue, // Button color blue
+                    ),
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(
+                        color: Colors.white, // Button text color white
+                      ),
+                    ),
                   ),
                 ],
               ),

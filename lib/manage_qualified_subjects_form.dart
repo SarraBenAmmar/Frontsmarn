@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ManageSubjectsForm extends StatefulWidget {
-  const ManageSubjectsForm({super.key});
+class ManageQualifiedSubjectsForm extends StatefulWidget {
+  const ManageQualifiedSubjectsForm({super.key});
 
   @override
-  _ManageSubjectsFormState createState() => _ManageSubjectsFormState();
+  _ManageQualifiedSubjectsFormState createState() =>
+      _ManageQualifiedSubjectsFormState();
 }
 
-class _ManageSubjectsFormState extends State<ManageSubjectsForm> {
+class _ManageQualifiedSubjectsFormState
+    extends State<ManageQualifiedSubjectsForm> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _subjectNameController = TextEditingController();
   final TextEditingController _subjectCodeController = TextEditingController();
@@ -16,28 +18,23 @@ class _ManageSubjectsFormState extends State<ManageSubjectsForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Manage Subjects"),
-        backgroundColor: Colors.blue, // Couleur de l'AppBar
+        title: const Text("Manage Qualified Subjects"),
+        backgroundColor: Colors.blue,
       ),
       body: Container(
-        color: const Color(0xFFF2F2F2), // Couleur de fond
+        color: const Color(0xFFF2F2F2),
         child: Center(
-          // Utilisation de Center pour centrer le contenu
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Form(
               key: _formKey,
               child: ListView(
-                shrinkWrap:
-                    true, // Ajuste la taille du ListView pour le centrer
+                shrinkWrap: true,
                 children: [
                   const Text(
-                    "Subject Information",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color(0xFF023E8A), // Couleur du titre
-                    ),
-                    textAlign: TextAlign.center, // Centrer le texte
+                    "Qualified Subject Information",
+                    style: TextStyle(fontSize: 20, color: Color(0xFF023E8A)),
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
@@ -45,8 +42,7 @@ class _ManageSubjectsFormState extends State<ManageSubjectsForm> {
                     decoration: InputDecoration(
                       labelText: "Subject Name",
                       border: const OutlineInputBorder(),
-                      labelStyle: const TextStyle(
-                          color: Color(0xFF023E8A)), // Couleur de l'étiquette
+                      labelStyle: const TextStyle(color: Color(0xFF023E8A)),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -61,8 +57,7 @@ class _ManageSubjectsFormState extends State<ManageSubjectsForm> {
                     decoration: InputDecoration(
                       labelText: "Subject Code",
                       border: const OutlineInputBorder(),
-                      labelStyle: const TextStyle(
-                          color: Color(0xFF023E8A)), // Couleur de l'étiquette
+                      labelStyle: const TextStyle(color: Color(0xFF023E8A)),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -76,16 +71,16 @@ class _ManageSubjectsFormState extends State<ManageSubjectsForm> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text("Subject Saved")),
+                          const SnackBar(
+                              content: Text("Qualified Subject Saved")),
                         );
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, // Couleur de fond du bouton
-                      foregroundColor:
-                          Colors.white, // Couleur du texte du bouton
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
                     ),
-                    child: const Text("Save Subject"),
+                    child: const Text("Save Qualified Subject"),
                   ),
                 ],
               ),
