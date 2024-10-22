@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smarn/account_creation_form.dart';
-
 class StudentForm extends StatefulWidget {
   const StudentForm({super.key});
 
@@ -12,8 +10,6 @@ class _StudentFormState extends State<StudentForm> {
   final _formKey = GlobalKey<FormState>();
 
   // Controllers to retrieve the text from the fields
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _classController = TextEditingController();
   final TextEditingController _keyController = TextEditingController();
 
@@ -35,39 +31,6 @@ class _StudentFormState extends State<StudentForm> {
                 'Student Information',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 20),
-
-              // Username Field
-              TextFormField(
-                controller: _usernameController,
-                decoration: const InputDecoration(
-                  labelText: 'Username',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a username';
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 20),
-
-              // Password Field
-              TextFormField(
-                controller: _passwordController,
-                obscureText: true, // To hide password characters
-                decoration: const InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a password';
-                  }
-                  return null;
-                },
               ),
               const SizedBox(height: 20),
 
@@ -120,19 +83,7 @@ class _StudentFormState extends State<StudentForm> {
                 child: const Text('Submit'),
               ),
               const SizedBox(height :30),
-              ElevatedButton(
-                style :ElevatedButton.styleFrom(backgroundColor:const Color(0xFFC0EEF2)),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AccountCreationForm(),
-                    ),
-                  );
-                },
-                child: const Text("Create account"),
-              )
-            ],
+            ]
           ),
         ),
       ),
