@@ -5,26 +5,24 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.3
+  sdk: '>=3.5.2 <4.0.0'  # Adjusting the SDK constraint for your project.
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.8  # Correctly placed Cupertino icons
-  path_provider: ^2.1.4    # Correctly placed path provider
+  cupertino_icons: ^1.0.8  # Latest stable version of Cupertino icons
+  path_provider: ^2.1.4    # Latest version you're using
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+
+  # Consider updating this to the latest available version (5.0.0 or above)
+  flutter_lints: ^5.0.0  # Update to latest for better linting
 
 flutter:
   uses-material-design: true
 
   assets:
     - assets/img/
-
-# Note:
-# - "cupertino_icons" and "path_provider" should be under "dependencies"
-# - "uses-material-design" should be inside the "flutter" section

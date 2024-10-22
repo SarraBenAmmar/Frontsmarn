@@ -4,6 +4,8 @@ import 'package:smarn/admin_dashboard.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -97,18 +99,20 @@ class _AdminFormState extends State<AdminForm> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-  if (_usernameController.text == 'admin' &&
-      _passwordController.text == 'admin') {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => AdminDashboard()),
-    );
-  } else {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Invalid credentials')),
-    );
-  }
-}        
+                        if (_usernameController.text == 'admin' &&
+                            _passwordController.text == 'admin') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AdminDashboard()),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Invalid credentials')),
+                          );
+                        }
+                      }
                     },
                     child: const Text('Login'),
                   ),

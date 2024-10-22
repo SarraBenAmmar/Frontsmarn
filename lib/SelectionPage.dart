@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smarn/student_form.dart';
-import 'package:smarn/teacher_form.dart';
 import 'package:smarn/admin_form.dart'; // Import the AdminForm widget
 
 class SelectionPage extends StatelessWidget {
@@ -55,8 +54,7 @@ class SelectionPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) =>  AdminForm()),
+                      MaterialPageRoute(builder: (context) => AdminForm()),
                     );
                   },
                 ),
