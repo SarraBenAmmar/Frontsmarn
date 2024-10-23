@@ -85,7 +85,7 @@ class _ManageSubjectsFormState extends State<ManageSubjectsForm> {
                       foregroundColor:
                           Colors.white, // Couleur du texte du bouton
                     ),
-                    child: const Text("Save Subject"),
+                    child: const Text("Login"),
                   ),
                 ],
               ),

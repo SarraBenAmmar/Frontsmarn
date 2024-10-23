@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smarn/student_dashboard.dart'; // Import the new student dashboard
 
 class ManageStudentsForm extends StatefulWidget {
   const ManageStudentsForm({super.key});
@@ -13,30 +14,36 @@ class _ManageStudentsFormState extends State<ManageStudentsForm> {
   final TextEditingController _studentIdController = TextEditingController();
 
   @override
+  void dispose() {
+    _studentNameController.dispose();
+    _studentIdController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Manage Students"),
-        backgroundColor: Colors.blue, // Couleur de l'AppBar
+        backgroundColor: Colors.blue,
       ),
       body: Container(
-        color: const Color(0xFFF2F2F2), // Couleur de fond
+        color: const Color(0xFFF2F2F2),
         child: Center(
-          // Utilisation du widget Center pour centrer le contenu
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Form(
               key: _formKey,
               child: ListView(
-                shrinkWrap:
-                    true, // Permet de réduire la taille du ListView pour le centrer
+                shrinkWrap: true,
                 children: [
                   const Text(
                     "Student Information",
                     style: TextStyle(
                       fontSize: 20,
-                      color: Color(0xFF023E8A), // Couleur du titre
+                      color: Color(0xFF023E8A),
                     ),
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
@@ -44,8 +51,7 @@ class _ManageStudentsFormState extends State<ManageStudentsForm> {
                     decoration: InputDecoration(
                       labelText: "Student Name",
                       border: const OutlineInputBorder(),
-                      labelStyle: const TextStyle(
-                          color: Color(0xFF023E8A)), // Couleur de l'étiquette
+                      labelStyle: const TextStyle(color: Color(0xFF023E8A)),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -57,11 +63,11 @@ class _ManageStudentsFormState extends State<ManageStudentsForm> {
                   const SizedBox(height: 20),
                   TextFormField(
                     controller: _studentIdController,
+                    keyboardType: TextInputType.number, // Set input type
                     decoration: InputDecoration(
                       labelText: "Student ID",
                       border: const OutlineInputBorder(),
-                      labelStyle: const TextStyle(
-                          color: Color(0xFF023E8A)), // Couleur de l'étiquette
+                      labelStyle: const TextStyle(color: Color(0xFF023E8A)),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -74,17 +80,20 @@ class _ManageStudentsFormState extends State<ManageStudentsForm> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text("Student Saved")),
+                        // Navigate to the student dashboard on successful login
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const StudentDashboard(),
+                          ),
                         );
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, // Couleur de fond du bouton
-                      foregroundColor:
-                          Colors.white, // Couleur du texte du bouton
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
                     ),
-                    child: const Text("Save Student"),
+                    child: const Text("Login"),
                   ),
                 ],
               ),

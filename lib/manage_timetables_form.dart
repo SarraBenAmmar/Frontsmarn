@@ -85,7 +85,7 @@ class _ManageTimetablesFormState extends State<ManageTimetablesForm> {
                       foregroundColor:
                           Colors.white, // Couleur du texte du bouton
                     ),
-                    child: const Text("Save Timetable"),
+                    child: const Text("Login"),
                   ),
                 ],
               ),
