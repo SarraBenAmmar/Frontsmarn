@@ -25,10 +25,10 @@ class _ManageStudentsFormState extends State<ManageStudentsForm> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Manage Students"),
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color(0xFFB414A4), // Purple AppBar
       ),
       body: Container(
-        color: const Color(0xFFF2F2F2),
+        color: const Color(0xFFF3E5F5), // Light purple background
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -41,17 +41,25 @@ class _ManageStudentsFormState extends State<ManageStudentsForm> {
                     "Student Information",
                     style: TextStyle(
                       fontSize: 20,
-                      color: Color(0xFF023E8A),
+                      color: Color(0xFF6A1B9A), // Dark purple text
                     ),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
                     controller: _studentNameController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: "Student Name",
-                      border: const OutlineInputBorder(),
-                      labelStyle: const TextStyle(color: Color(0xFF023E8A)),
+                      labelStyle: TextStyle(
+                        color: Color(0xFF6A1B9A), // Dark purple label
+                      ),
+                      border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color:
+                              Color(0xFFB414A4), // Purple border when focused
+                        ),
+                      ),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -64,10 +72,17 @@ class _ManageStudentsFormState extends State<ManageStudentsForm> {
                   TextFormField(
                     controller: _studentIdController,
                     keyboardType: TextInputType.number, // Set input type
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: "Student ID",
-                      border: const OutlineInputBorder(),
-                      labelStyle: const TextStyle(color: Color(0xFF023E8A)),
+                      labelStyle: TextStyle(
+                        color: Color(0xFF6A1B9A), // Dark purple label
+                      ),
+                      border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFFB414A4), // Purple border on focus
+                        ),
+                      ),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -90,8 +105,15 @@ class _ManageStudentsFormState extends State<ManageStudentsForm> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      foregroundColor: Colors.white,
+                      backgroundColor: const Color(0xFFB414A4), // Purple button
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 15,
+                        horizontal: 30,
+                      ),
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        color: Colors.white, // White button text
+                      ),
                     ),
                     child: const Text("Login"),
                   ),

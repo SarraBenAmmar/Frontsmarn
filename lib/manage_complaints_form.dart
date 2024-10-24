@@ -19,34 +19,40 @@ class _ManageComplaintsFormState extends State<ManageComplaintsForm> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Manage Complaints"),
-        backgroundColor: Colors.blue, // Set AppBar color
+        backgroundColor: const Color(0xFFB414A4), // Purple AppBar
       ),
       body: Container(
-        color: const Color(0xFFF2F2F2), // Set background color
+        color: const Color(0xFFF3E5F5), // Light purple background
         child: Center(
-          // Utilisation du widget Center pour centrer le contenu
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Form(
               key: _formKey,
               child: ListView(
-                shrinkWrap:
-                    true, // Permet de réduire la taille du ListView pour le centrer
+                shrinkWrap: true, // Adjust ListView size for centering
                 children: [
                   const Text(
                     "Complaint Information",
                     style: TextStyle(
-                        fontSize: 20,
-                        color: Color(0xFF023E8A)), // Dark blue title color
+                      fontSize: 20,
+                      color: Color(0xFF6A1B9A), // Dark purple title
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
                     controller: _complaintTitleController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: "Complaint Title",
                       border: OutlineInputBorder(),
-                      labelStyle: const TextStyle(
-                          color: Color(0xFF023E8A)), // Label color
+                      labelStyle: TextStyle(
+                        color: Color(0xFF6A1B9A), // Dark purple label
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFFB414A4), // Purple border on focus
+                        ),
+                      ),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -58,11 +64,17 @@ class _ManageComplaintsFormState extends State<ManageComplaintsForm> {
                   const SizedBox(height: 20),
                   TextFormField(
                     controller: _complaintDetailsController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: "Complaint Details",
                       border: OutlineInputBorder(),
-                      labelStyle: const TextStyle(
-                          color: Color(0xFF023E8A)), // Label color
+                      labelStyle: TextStyle(
+                        color: Color(0xFF6A1B9A), // Dark purple label
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFFB414A4), // Purple border on focus
+                        ),
+                      ),
                     ),
                     maxLines: 5,
                     validator: (value) {
@@ -77,14 +89,22 @@ class _ManageComplaintsFormState extends State<ManageComplaintsForm> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text("Complaint Submitted")),
+                          const SnackBar(
+                            content: Text("Complaint Submitted"),
+                          ),
                         );
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          Colors.blue, // Set button background color
-                      foregroundColor: Colors.white, // Set button text color
+                      backgroundColor: const Color(0xFFB414A4), // Purple button
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 15,
+                        horizontal: 30,
+                      ),
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        color: Colors.white, // White text on button
+                      ),
                     ),
                     child: const Text("Submit Complaint"),
                   ),

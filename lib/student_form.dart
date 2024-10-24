@@ -16,37 +16,46 @@ class _StudentFormState extends State<StudentForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF2F2F2), // Light grey background
+      backgroundColor: const Color(0xFF1C1C1E), // Fond noir
       appBar: AppBar(
-        backgroundColor: Colors.blue, // AppBar color set to blue
-        title: const Text('Student Form'),
+        backgroundColor: const Color(0xFFB414A4), // Couleur mauve de l'AppBar
+        title:
+            const Text('Student Form', style: TextStyle(color: Colors.white)),
       ),
       body: Center(
-        // Center the form on the screen
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
             child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                  maxWidth:
-                      400), // Optional: Limits the form width for larger screens
+              constraints: const BoxConstraints(maxWidth: 400),
               child: ListView(
-                shrinkWrap: true, // Makes the ListView fit its content
+                shrinkWrap: true,
                 children: [
                   const Text(
                     'Student Information',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white, // Texte en blanc
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
 
-                  // Class Field
+                  // Champ de classe
                   TextFormField(
                     controller: _classController,
                     decoration: const InputDecoration(
                       labelText: 'Class',
                       border: OutlineInputBorder(),
+                      labelStyle: TextStyle(
+                          color: Color(0xFFB414A4)), // Couleur mauve du label
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color(
+                                0xFFB414A4)), // Bordure mauve lors du focus
+                      ),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -57,12 +66,19 @@ class _StudentFormState extends State<StudentForm> {
                   ),
                   const SizedBox(height: 20),
 
-                  // Key Field
+                  // Champ de clé
                   TextFormField(
                     controller: _keyController,
                     decoration: const InputDecoration(
                       labelText: 'Key to Connect',
                       border: OutlineInputBorder(),
+                      labelStyle: TextStyle(
+                          color: Color(0xFFB414A4)), // Couleur mauve du label
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color(
+                                0xFFB414A4)), // Bordure mauve lors du focus
+                      ),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -73,7 +89,7 @@ class _StudentFormState extends State<StudentForm> {
                   ),
                   const SizedBox(height: 30),
 
-                  // Submit Button
+                  // Bouton de soumission
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
@@ -83,13 +99,14 @@ class _StudentFormState extends State<StudentForm> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, // Button color set to blue
+                      backgroundColor:
+                          const Color(0xFFB414A4), // Couleur mauve du bouton
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15), // Padding du bouton
                     ),
                     child: const Text(
                       'Submit',
-                      style: TextStyle(
-                        color: Colors.white, // Text color set to white
-                      ),
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                   const SizedBox(height: 30),

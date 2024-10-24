@@ -14,12 +14,12 @@ class _TimeConstraintsFormState extends State<TimeConstraintsForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF2F2F2), // Light background color
+      backgroundColor: const Color(0xFFEDE7F6), // Light purple background color
       appBar: AppBar(
-        backgroundColor: Colors.blue, // Same AppBar color as HomeScreen
+        backgroundColor: const Color(0xFFB414A4), // Purple AppBar
         title: const Text(
           "Manage Time Constraints",
-          style: TextStyle(color: Colors.white), // White text for AppBar title
+          style: TextStyle(color: Colors.white), // White AppBar text
         ),
       ),
       body: Center(
@@ -35,7 +35,7 @@ class _TimeConstraintsFormState extends State<TimeConstraintsForm> {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF023E8A), // Same text color as HomeScreen
+                    color: Color(0xFF6A1B9A), // Darker purple for the title
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -45,12 +45,12 @@ class _TimeConstraintsFormState extends State<TimeConstraintsForm> {
                   decoration: const InputDecoration(
                     labelText: "Time Range",
                     labelStyle: TextStyle(
-                      color: Color(0xFF023E8A), // Consistent label color
+                      color: Color(0xFF6A1B9A), // Darker purple for the label
                     ),
                     border: OutlineInputBorder(),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.blue, // Blue border when focused
+                        color: Color(0xFFB414A4), // Purple border when focused
                       ),
                     ),
                   ),
@@ -71,15 +71,14 @@ class _TimeConstraintsFormState extends State<TimeConstraintsForm> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        Colors.blue, // Same button color as HomeScreen
+                    backgroundColor: const Color(0xFFB414A4), // Purple button
                     padding: const EdgeInsets.symmetric(
                       vertical: 15,
                       horizontal: 30,
                     ),
                     textStyle: const TextStyle(
                       fontSize: 18,
-                      color: Colors.white, // White button text
+                      color: Colors.white, // White text for the button
                     ),
                   ),
                   child: const Text("Save Time Constraint"),

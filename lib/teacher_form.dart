@@ -8,7 +8,8 @@ class TeacherForm extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF2F2F2), // Couleur de fond
       appBar: AppBar(
-        backgroundColor: Colors.blue, // Couleur de l'AppBar
+        backgroundColor:
+            const Color.fromARGB(255, 161, 2, 164), // Couleur de l'AppBar
         title: const Text(
           'Teacher Form',
           style: TextStyle(
@@ -21,7 +22,7 @@ class TeacherForm extends StatelessWidget {
           'This is the Teacher form page',
           style: TextStyle(
             fontSize: 18,
-            color: Color(0xFF023E8A), // Couleur du texte
+            color: const Color.fromARGB(255, 161, 2, 164), // Couleur du texte
           ),
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smarn/admin_dashboard.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,9 +9,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: AdminForm(),
+      home: const AdminForm(),
       routes: {
-        '/dashboard': (context) => AdminDashboard(),
+        '/dashboard': (context) => const AdminDashboard(),
       },
     );
   }
@@ -32,21 +32,21 @@ class _AdminFormState extends State<AdminForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF2F2F2), // Light grey background
+      backgroundColor: const Color(0xFF1C1C1E), // Fond noir
       appBar: AppBar(
-        title: const Text('Admin Form'),
-        backgroundColor: Colors.blue, // AppBar color blue
+        title: const Text('Admin Form', style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFFB414A4), // Couleur mauve de l'AppBar
       ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: const Color(0xFF2C2C2E), // Couleur de fond de la carte
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.blue.withOpacity(0.5),
+                  color: Colors.black.withOpacity(0.5),
                   spreadRadius: 3,
                   blurRadius: 5,
                   offset: const Offset(0, 3),
@@ -64,7 +64,7 @@ class _AdminFormState extends State<AdminForm> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue, // Text color blue
+                      color: Colors.white, // Texte en blanc
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -73,6 +73,13 @@ class _AdminFormState extends State<AdminForm> {
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Username',
+                      labelStyle: TextStyle(
+                          color: Color(0xFFB414A4)), // Couleur mauve du label
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color(
+                                0xFFB414A4)), // Bordure mauve lors du focus
+                      ),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -88,6 +95,13 @@ class _AdminFormState extends State<AdminForm> {
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Password',
+                      labelStyle: TextStyle(
+                          color: Color(0xFFB414A4)), // Couleur mauve du label
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color(
+                                0xFFB414A4)), // Bordure mauve lors du focus
+                      ),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -105,7 +119,7 @@ class _AdminFormState extends State<AdminForm> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AdminDashboard()),
+                                builder: (context) => const AdminDashboard()),
                           );
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
@@ -116,12 +130,13 @@ class _AdminFormState extends State<AdminForm> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, // Button color blue
+                      backgroundColor:
+                          const Color(0xFFB414A4), // Couleur mauve du bouton
                     ),
                     child: const Text(
                       'Login',
                       style: TextStyle(
-                        color: Colors.white, // Button text color white
+                        color: Colors.white, // Couleur du texte du bouton
                       ),
                     ),
                   ),

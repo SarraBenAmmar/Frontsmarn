@@ -16,27 +16,26 @@ class _SpaceConstraintsFormState extends State<SpaceConstraintsForm> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Manage Space Constraints"),
-        backgroundColor: Colors.blue, // Couleur de l'AppBar
+        backgroundColor: const Color(0xFFB414A4), // Purple AppBar color
       ),
       body: Container(
-        color: const Color(0xFFF2F2F2), // Couleur de fond
+        color: const Color(0xFFEDE7F6), // Light background color
         child: Center(
-          // Centre le formulaire dans l'écran
+          // Center the form in the screen
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Form(
               key: _formKey,
               child: ListView(
-                shrinkWrap:
-                    true, // Adapte la taille du ListView pour centrer son contenu
+                shrinkWrap: true, // Adapt ListView size to center its content
                 children: [
                   const Text(
                     "Space Constraints",
                     style: TextStyle(
                       fontSize: 20,
-                      color: Color(0xFF023E8A), // Couleur du titre
+                      color: Color(0xFF6A1B9A), // Darker purple for title
                     ),
-                    textAlign: TextAlign.center, // Centrage du texte
+                    textAlign: TextAlign.center, // Center the text
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
@@ -45,7 +44,7 @@ class _SpaceConstraintsFormState extends State<SpaceConstraintsForm> {
                       labelText: "Space Name",
                       border: const OutlineInputBorder(),
                       labelStyle: const TextStyle(
-                          color: Color(0xFF023E8A)), // Couleur de l'étiquette
+                          color: Color(0xFF6A1B9A)), // Darker purple label
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -65,11 +64,12 @@ class _SpaceConstraintsFormState extends State<SpaceConstraintsForm> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, // Couleur de fond du bouton
-                      foregroundColor:
-                          Colors.white, // Couleur du texte du bouton
+                      backgroundColor:
+                          const Color(0xFFB414A4), // Purple button color
+                      foregroundColor: Colors.white, // Button text color
                     ),
-                    child: const Text("Login"),
+                    child: const Text(
+                        "Save Space Constraint"), // Updated button text
                   ),
                 ],
               ),

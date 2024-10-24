@@ -13,23 +13,21 @@ class AdminDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF2F2F2), // Light grey background
+      backgroundColor: const Color(0xFF1C1C1E), // Flat black background
       appBar: AppBar(
-        title: const Text('Admin Dashboard'),
-        backgroundColor: Colors.blue, // Main blue color for AppBar
-        elevation: 4, // Slight elevation for shadow effect
+        title: const Text(
+          'Admin Dashboard',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: const Color(0xFFB414A4), // Couleur mauve pour l'AppBar
+        elevation: 0, // Flat AppBar, no shadow
       ),
       body: Row(
         children: [
-          // Sidebar with darker color for contrast
+          // Sidebar with deep black and accent hover effect
           Container(
-            width: 200,
-            decoration: const BoxDecoration(
-              color: Color(0xFF023E8A), // Dark blue sidebar
-              boxShadow: [
-                BoxShadow(blurRadius: 10, color: Colors.black12)
-              ], // Shadow for depth
-            ),
+            width: 220,
+            color: const Color(0xFF1A1A1D), // Solid black sidebar
             child: ListView(
               padding: const EdgeInsets.all(8),
               children: [
@@ -42,7 +40,7 @@ class AdminDashboard extends StatelessWidget {
               ],
             ),
           ),
-          // Main Content with card animations
+          // Main Content area with Grid of animated cards
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -68,70 +66,72 @@ class AdminDashboard extends StatelessWidget {
     );
   }
 
-  // Sidebar item with hover effect and icon
+  // Sidebar item with mauve hover effect
   Widget _buildSidebarItem(
       BuildContext context, IconData icon, String title, Widget page) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: ListTile(
-        leading: Icon(icon, color: Colors.white, size: 24),
+        leading: Icon(icon,
+            color: const Color(0xFFB414A4),
+            size: 26), // Couleur mauve pour l'icône
         title: Text(
           title,
-          style: const TextStyle(color: Colors.white, fontSize: 16),
+          style: const TextStyle(
+            color: Color(0xFFB414A4), // Couleur mauve pour le texte
+            fontSize: 16,
+          ),
         ),
         tileColor: Colors.transparent,
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => page), // Navigate to the specified page
+            MaterialPageRoute(builder: (context) => page),
           );
         },
-        hoverColor: Colors.white24,
+        hoverColor:
+            const Color(0xFFB414A4).withOpacity(0.3), // Light hover effect
       ),
     );
   }
 
-  // Dashboard card with 3D effect, shadow, and hover animation
+  // Animated card with subtle mauve hover effect
   Widget _buildAnimatedDashboardCard(
       BuildContext context, String title, IconData icon, Widget page) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => page)); // Navigate to the specified page
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
       },
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 250),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          color: const Color(0xFF2C2C2E), // Dark gray card
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 4,
-              blurRadius: 8,
-              offset: const Offset(0, 5), // Creates 3D-like shadow
+              color: Colors.black.withOpacity(0.5),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
         child: InkWell(
-          splashColor: Colors.blue.withOpacity(0.3), // Splash effect
-          borderRadius: BorderRadius.circular(20),
+          splashColor: const Color(0xFFB414A4), // Mauve splash effect
+          borderRadius: BorderRadius.circular(16),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(icon, size: 50, color: Colors.blue),
+                Icon(icon,
+                    size: 50, color: const Color(0xFFB414A4)), // Mauve icon
                 const SizedBox(height: 20),
                 Text(
                   title,
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF023E8A), // Same as sidebar for uniformity
+                    color: Colors.white, // White text for better contrast
                   ),
                   textAlign: TextAlign.center,
                 ),
